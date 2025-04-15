@@ -48,7 +48,8 @@ This repository contains practical implementations of creational design patterns
 
 
 ## Notes and Resources
-- Course link: https://www.coursera.org/learn/packt-creational-design-patterns-in-modern-c-5n9at
+- [Coursera Course](https://www.coursera.org/learn/packt-creational-design-patterns-in-modern-c-5n9at)
+- [Course Repository](https://github.com/PacktPublishing/Creational-Design-Patterns-in-Modern-C-plus-plus)
 
 ## Progress Tracking
 | Week | Topic                     | Status |
