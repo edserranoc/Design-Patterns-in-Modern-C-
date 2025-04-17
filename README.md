@@ -54,9 +54,9 @@ This repository contains practical implementations of creational design patterns
 ## Progress Tracking
 | Week | Topic                     | Status |
 |:---:|---------------------------|:---:|
-| 1    | Introduction               | ⏳     |
-| 2    | Singleton                  | ❌     |
-| 3    | Factory Method            | ❌     |
+| 1    | Introduction               | ✅     |
+| 2    | Singleton                  | ⏳     |
+| 3    | Factory Method             | ❌     |
 | 4    | Object Pool                | ❌     |
 | 5    | Abstract Factory           | ❌     |
 | 6    | Prototype                  | ❌     |
