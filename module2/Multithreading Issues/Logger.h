@@ -3,8 +3,10 @@
 #include <cstdio>
 #include <string>
 #include <memory>
+#include <mutex>
 
 class Logger{
+    static std::mutex m_Mtx;
     struct Deleter{
         void operator()(Logger *p) {
             delete p ;

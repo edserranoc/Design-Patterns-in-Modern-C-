@@ -3,6 +3,8 @@
 
 Logger *Logger::m_pInstance;  // Static instance pointer
 
+std::mutex Logger::m_Mtx; // Mutex for thread safety
+
 // Constructor initializes the log file
 Logger::Logger(){
     std::cout << __FUNCTION__ << std::endl;
@@ -14,10 +16,14 @@ Logger::Logger(){
 
 
 // Instance returns the singleton instance of Logger
-Logger & Logger::Instance(){ 
-    if (m_pInstance == nullptr)     // Lazy initialization
-        m_pInstance = new Logger(); // Create the instance
-        //m_pInstance.reset(new Logger{}); // Use smart pointer to manage the instance
+Logger & Logger::Instance(){
+    //Double-checked locking pattern
+    if (m_pInstance == nullptr){
+        m_Mtx.lock(); // Lock the mutex to ensure thread safety
+        if (m_pInstance == nullptr)     // Lazy initialization
+            m_pInstance = new Logger(); // Create the instance
+        m_Mtx.unlock(); // Unlock the mutex
+    }
     return *m_pInstance;       // Return the instance
 }
 
